@@ -1,0 +1,16 @@
+/** INTERNET EXPLORER <9 SPECIFIC STYLES **************************************/
+div.scImgZmMag{
+	outline:1px solid gray;
+}
+.txt_textTab_is,
+.txt_textButton_is,
+.txt_textRadioButton_is,
+.txt_textCheckBox_is,
+.txt_keyboard_is,
+.txt_menuPath_is,
+.txt_filePath_is,
+.txt_win_is,
+.txt_label_is{
+	background-color:#eeeeec;
+}
+

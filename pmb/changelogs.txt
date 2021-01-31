@@ -1,0 +1,256 @@
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+*                                    CHANGE_LOG_7.3 RC1                                                                *
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+
+****************************
+Les numéros indiqués ici sont utilisés en interne par PMB Services pour son développement.
+
+
+*******************
+ANOMALIES
+
+
+--------------
+Administration
+--------------
+
+#70773 : Message lors de la suppression d'un statut de notice nécessaire au bon fonctionnement de PMB
+Un message apparaîtra désormais lorsqu'un utilisateur essaie de supprimer l'un des deux premiers statuts (Identifiants 1 et 2) de notices dans PMB.
+Ils sont nécessaires au bon fonctionnement de PMB.
+
+#73012 : Mauvaise image affichée dans la gestion de filtres/tris
+L'image minus.gif était affichée à la place de l'image plus.gif
+
+#73348 : Correction Bug JSONRPC dans les external services
+
+---------
+Catalogue
+---------
+
+#72552 : Récupération Z39.50 et titre de série
+En récupération Z39.50, au niveau du titre de série on propose désormais le choix entre utiliser un titre de série existant et insérer un nouveau, comme c'est le cas pour les autres autorités.
+
+#72864 :  Bouton + dans le formulaire de notices se comporte anormalement
+En modification de notices, le bouton + pour ajouter un champ supplémentaire était mal situé et/ou ne se plaçait pas sur le dernier champ rajouté.
+
+--------
+Demandes
+--------
+
+#72758 : Prise en compte du paramètre faq_active
+Prise en compte du paramètre faq_active dans l'onglet demande
+
+---
+DSI
+---
+
+#73246 : Correction de l'export de bannettes automatiques
+Lors de la génération de document ainsi que l'export, le document produit ne contenait pas le texte souhaité.
+
+----
+OPAC
+----
+
+#72079 : Ajout des global $base_path, $class_path dans le constructeur de la classe parse_format
+Correction d'erreurs de contexte à l'OPAC à l'inclusion de classes php.
+
+
+*******************
+DEVELOPPEMENTS
+
+
+--------------
+Administration
+--------------
+
+#72008 : Affichage des utilisateurs PMB
+Administration > Utilisateurs :
+- Factorisation + Passage aux nouvelles listes.
+- Travail préparatif pour la modification d'utilisateurs en lot.
+
+-----------
+Circulation
+-----------
+
+#70961 : Refonte de la liste des demandes de numérisation
+Afin que cela soit ouvert à de nombreuses évolutions possibles au même titre que les autres listes.
+- Personnalisation des filtres
+- Groupements / Ordonnancements
+- Personnalisation des colonnes
+- Pagination avancée
+- Exports
+- Actions en lot
+
+-------
+Portail
+-------
+
+#72595 : [Liste de bannettes] Vue à partir d'un template défini en édition
+Nouvelle vue dans le module "Liste de bannettes".
+
+#72596 : [Liste de bannettes] Vue depuis un répertoire de templates à partir d'un template défini en édition
+Nouvelle vue dans le module "Liste de bannettes".
+
+#73108 : Ajout d'une source de données dans les autorités personnalisées des pages FRBR
+Ajout de la source : "exemplaires ayant comme champ personnalisé une autorité personnalisée".
+
+
+*******************
+EVOLUTIONS
+
+------------
+Acquisitions
+------------
+
+#70762 : Commandes / filtre par exercice comptable
+Filtre sur l'exercice comptable dans la liste des actes :
+- Application de la préférence utilisateur
+
+#70805 : Pouvoir activer/désactiver les demandes de location
+Ajout d'un nouveau paramètre en Administration > Outils > Paramètres > Section "Acquisitions" :
+- rent_requests_activate. Celui-ci est désactivé par défaut.
+
+#71718 : Filtre par statut de ligne dans les réceptions
+Ajout d'une ligne "Tous les statuts" sélectionnée par défaut.
+
+#71934 : Sélection d'abonnement dans une commande : affichage du nombre d'inscrits
+Ajout d'une nouvelle colonne pour afficher le nombre d'inscrits à la liste de circulation, si la circulation des périodiques est activée.
+
+#72047 : Changer l'état d'une suggestion à partir des réceptions
+Aucun message n'était affiché pour indiquer que le changement d'état de la suggestion s'était bien déroulé.
+
+#72376 : [Réceptions] Relances multiples le même jour
+Un message de confirmation sera désormais affiché pour les relances multiples le même jour.
+
+--------------
+Administration
+--------------
+
+#70760 : Préférences : ne pas proposer les fonctionnalités non activées
+Dans les préférences utilisateurs on trouve les fonctionnalités suivantes même si elles ne sont pas activées :
+- schéma par défaut pour les concepts
+- répertoire d'upload > enregistrer dans la base même si docnum_in_database_allow = 0
+- activer le prêt court par défaut
+- préférences pour les acquisitions
+Ce n'est désormais plus le cas.
+
+#72007 : Vues Opac depuis le paramétrage d'une recherche prédéfinie
+Avoir la possibilité de choisir les vues Opac depuis le paramétrage d'une recherche prédéfinie.
+
+---------
+Autorités
+---------
+
+#72304 : Editions de catégories : pivot sur le thesaurus
+Possibilité de générer des grilles de saisie par thésaurus.
+
+#72305 : [Thésaurus multiples] Création de catégories
+Autorisation de la modification du thésaurus d'appartenance dans le formulaire de création d'une catégorie.
+
+#73380 : Ajout des concepts dans le mappage lors de la création d'une expression à partir d'une oeuvre
+Générer une expression à partir d'une ?uvre copie dans l'expression les concepts présents dans l'?uvre.
+
+-----------
+Circulation
+-----------
+
+#71910 : [Prêts/Retours] Mise en forme du message exemplaire
+Affichage du message exemplaire tel qu'il a été saisi lors d'un prêt/retour.
+
+--------
+Demandes
+--------
+
+#73387 : Optimisations du module Demandes
+Ajout d'auto complétion dans certains champs. 
+Correction de notices.
+Correction de bugs.
+
+------
+Divers
+------
+
+#70769 : Liste des critères de tri disponibles
+Ils sont désormais triés par ordre alphabétique.
+
+#71047 : [RMC] Affichage sous forme de cases à cocher
+Possibilité de substituer un critère en modifiant l'affichage vers des cases à cocher.
+Exemple :
+<pre>
+<input type="checkbox_list">
+<options>
+<option value="1">Option 1</option>
+<option value="2">Option 2</option>
+<option value="3">Option 3</option>
+<option value="4">Option 4</option>										
+</options>
+</input>
+</pre>
+
+#71132 : Corrections / Optimisations PHP7.3
+Vague de correctifs pour la compatibilité PHP7.1 jusque 7.3
+
+#71705 : Bouton (+) et (-) dans les listes pour ordonner un tableau
+Remplacement de ces boutons par des flèches directionnelles.
+
+#71802 : Circulation des périodiques paramétrable
+Nouveau paramètre pour activer/désactiver la circulation des périodiques en partie gestion. Nom du paramètre : serialcirc_active
+
+#73345 : Externalisation et mise à jour de PHPRtfLite
+Externalisation du paquet PHPRtfLite avec composer.
+
+---
+DSI
+---
+
+#73484 : Ajout d'une popup dans la DSI
+Ajout d'une popup d'indication qui apparaît lors d'une tentative d'action sur les bannettes alors qu'aucune d'elles n'est sélectionnée.
+
+----
+OPAC
+----
+
+#71642 : Demandes de numérisation : création en OPAC
+Pré-remplir la demande de numérisation avec le titre de la notice.
+
+#72377 : Inscription OPAC aux abonnements de périodiques
+Ajout du libellé OPAC de l'abonnement à côté du titre de périodique.
+
+#73179 : Contributions : Création d'un nouveau datatype pour les dates flottantes
+Prise en compte du champ personnalisé "dates flottantes" dans les contributions.
+
+
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+*                                    CHANGE_LOG_7.0.1                                                                  *
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+
+
+Bientôt sur le site www.sigb.net :
+Nouveautés : https://www.sigb.net/index.php?lvl=cmspage&pageid=6&id_rubrique=335
+Améliorations : https://www.sigb.net/index.php?lvl=cmspage&pageid=6&id_rubrique=333
+
+
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+*                                    CHANGE_LOG_5.0.7                                                                 *
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+
+
+Voir le fichier changelogs5.txt dans le répertoire racine de PMB (ajoutez "5" dans l'URL de cette page !)

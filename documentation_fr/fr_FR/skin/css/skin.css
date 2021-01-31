@@ -1,0 +1,107 @@
+/** SKIN OVERLOADS ************************************************************/
+
+/*	Extension MS	*/
+div#scDepotStack {
+  position: absolute;
+  top: 12px;
+  left: 180px;
+  color: #ffffff;
+}
+div#scDepotStack a{
+  color: white;
+  text-decoration:none;
+}
+div#scDepotStack a:hover{
+  text-decoration:underline;
+}
+
+#page {
+  max-width: 100%;
+}
+
+#header {
+  background: #ffffff;
+  height: 60px;
+  border-bottom: solid 1px #e7e7e7;
+}
+
+#header h1 {
+  color: #f0a934;
+}
+
+#menu a {
+    color: #6e7376;
+}
+
+#menu a:hover span {
+    text-decoration:none;
+}
+
+#menu a:after {
+  content: "";
+  width: 50px;
+  display: block;
+  border-top: solid 5px #f0a934;
+}
+
+p {
+  line-height: 19px;
+}
+
+h2 {
+  color: ##444444;
+  position: relative;
+  margin-bottom: 50px;
+  z-index: 3;
+  font-size: 40px;
+  text-indent: 1em;
+}
+
+h2:before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(to bottom right, rgb(191, 226, 253), rgb(205, 230, 249));
+  position: absolute;
+  z-index: -1;
+  left: 15px;
+  top: -15px;
+  border-radius: 0;
+  opacity: 0.5;
+}
+
+h2 .headCo_ti {
+  margin-bottom: 50px;
+}
+
+p {
+  margin-right: 10px;
+  font-size: 1.1em;
+  text-align: justify;
+}
+
+ul.sw_outSubSec_navList span {
+  font-weight: 600;
+  font-size: 1.3em;
+}
+
+#footer {
+  background: #21272a;
+  height: 90px;
+}
+
+a.btnSc {
+  margin-top: 40px;
+}
+
+#footer nav a {
+  background-color: #414141;
+  top: 26px;
+  border-radius: 10px;
+}
+
+.caption_co {
+    text-align: left !important;
+    margin-top: 1cm;
+}
